@@ -1,0 +1,1 @@
+web java -jar target/ayuda_config-0.0.1-SNAPSHOT.jar -Dspring.profiles.active=production
