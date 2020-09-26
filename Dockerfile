@@ -8,5 +8,6 @@ FROM openjdk:11
 COPY --from=MvnBuild . .
 RUN mvn clean package -DskipTests
 RUN dir target
+WORKDIR /
 COPY target/ayuda_config-0.0.1-SNAPSHOT.jar app.jar
 ENTRYPOINT ["java", "-Dspring.profiles.active=production", "-jar", "app.jar"]
