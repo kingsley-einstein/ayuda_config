@@ -2,6 +2,7 @@ ARG MVN_VERSION=3.6.3-openjdk-11
 FROM maven:${MVN_VERSION} as MvnBuild
 COPY src ./src
 COPY mvnw* ./
+COPY pom.xml ./
 
 FROM openjdk:11
 COPY --from=MvnBuild . .
