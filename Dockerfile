@@ -7,6 +7,6 @@ COPY pom.xml ./
 FROM openjdk:11
 COPY --from=MvnBuild . .
 RUN mvn clean package -DskipTests
-RUN ls -al
+RUN dir target
 COPY target/*.jar app.jar
 ENTRYPOINT ["java", "-Dspring.profiles.active=production", "-jar", "app.jar"]
